@@ -2,43 +2,14 @@
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true,
       "modules": true
     }
   },
-  "plugins": [
-    "react",
-    "jest"
-  ],
-  "rules": {
-		"max-len": "off",
-    "no-console": "warn",
-    "linebreak-style": "off",
-    "react/no-unescaped-entities": "off",
-    "comma-dangle": "off",
-    "class-methods-use-this": "off",
-    "import/prefer-default-export": "off",
-		"prefer-template": "off",
-		"arrow-parens": "off",
-		"no-shadow": "off",
-    "no-nested-ternary": "off",
-    "no-bitwise": "off"
-  },
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended"
+    "eslint:recommended"
   ],
   "env": {
-    "jest": true
-  },
-  "globals": {
-    "window": true,
-    "document": true
-  },
-  "settings": {
-    "import/resolver": "babel-plugin-root-import",
-    "react": {
-      "version": "16.8.6"
-    }
+    "browser": true,
+    "node": true
   }
 }
