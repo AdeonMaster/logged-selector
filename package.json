@@ -6,6 +6,7 @@
   "module": "es/index.js",
   "scripts": {
     "build:lib": "babel src --out-dir lib --ignore src/__tests__/",
+    "build": "npm run eslint && npm run build:lib",
     "eslint": "eslint ./src",
     "eslint:fix": "eslint --fix ./src"
   },
