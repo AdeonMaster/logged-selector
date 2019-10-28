@@ -2,38 +2,55 @@
   "name": "logged-selector",
   "version": "1.0.0",
   "description": "Custom reselect selector with the ability to log all recomputations with the output similar to redux-logger",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "scripts": {
-    "build:lib": "babel src --out-dir lib --ignore src/__tests__/",
-    "build": "npm run eslint && npm run build:lib",
-    "eslint": "eslint ./src",
-    "eslint:fix": "eslint --fix ./src"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AdeonMaster/logged-selector.git"
+  },
+  "homepage": "https://adeonmaster.github.io/logged-selector/",
+  "bugs": {
+    "url": "https://github.com/AdeonMaster/logged-selector/issues"
   },
   "keywords": [
-    "adeon",
-    "redux",
     "reselect",
+    "selectors",
     "selector",
-    "logging",
-    "log"
+    "loggin",
+    "log",
+    "adeon"
   ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "esnext": "src/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "build:lib": "babel src --out-dir lib --ignore src/__tests__/",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --ignore src/__tests__/",
+    "build": "npm run eslint && npm run jest && npm run build:lib && npm run build:es",
+    "eslint": "eslint ./src",
+    "eslint:fix": "eslint --fix ./src",
+    "jest": "jest"
+  },
   "author": "AdeonMaster",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
     "babel-plugin-transform-imports": "^1.5.1",
+    "cross-env": "^6.0.3",
     "eslint": "^5.16.0",
-    "regenerator-runtime": "^0.13.2"
+    "eslint-plugin-import": "^2.17.3",
+    "jest": "^24.9.0"
   },
   "dependencies": {
     "deep-object-diff": "^1.1.0",
     "ramda": "^0.26.1",
     "reselect": "^4.0.0"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
